@@ -12,7 +12,6 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import history from '~/utils/history';
 
 import { App } from './App';
-import { version } from '../package.json';
 
 import './index.scss';
 

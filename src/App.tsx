@@ -9,20 +9,42 @@ import path from './configs/path';
 
 const { Home } = lazyImport(() => import('./pages/home'), 'Home');
 const { NotFound } = lazyImport(() => import('./pages/notFound'), 'NotFound');
+const { JobSchedule } = lazyImport(
+  () => import('./pages/jobSchedule'),
+  'JobSchedule'
+);
+const { PunchClock } = lazyImport(
+  () => import('./pages/punchClock'),
+  'PunchClock'
+);
 
 export const App: React.FC = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    if (pathname === '/') navigate(path.CLIENT_INFO);
-  }, []);
 
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route
           path={path.HOME}
+          element={
+            <RouteSuspense>
+              <Home />
+            </RouteSuspense>
+          }
+        />
+
+        <Route
+          path={path.PUNCH_CLOCK}
+          element={
+            <RouteSuspense>
+              <Home />
+            </RouteSuspense>
+          }
+        />
+
+        <Route
+          path={path.JOB_SCHEDULE}
           element={
             <RouteSuspense>
               <Home />

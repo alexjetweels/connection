@@ -1,60 +1,21 @@
-.menuNav {
+.sider {
+  background-color: white !important;
+  border-right: 1px solid #d9d9d9;
+}
+
+.navItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
   :global {
-    .ant-menu-horizontal {
-      line-height: 38px;
-    }
+    color: #2e3080;
+
     .ant-menu-item-selected {
-      background-color: #2e3080 !important;
-      border-radius: 4px !important;
-
-      .ant-menu-title-content {
-        a {
-          color: white;
-          svg {
-            path {
-              fill: white;
-            }
-          }
-        }
-      }
-    }
-
-    .ant-menu-submenu-selected {
-      background-color: #2e3080 !important;
-      border-radius: 4px !important;
-
-      .ant-menu-title-content {
-        a {
-          color: white;
-
-          svg {
-            path {
-              fill: white;
-            }
-          }
-        }
-      }
-    }
-
-    .ant-menu-horizontal {
-      border-bottom: none;
-    }
-
-    .ant-menu-overflow-item {
-      margin: 0px 20px;
-    }
-
-    .ant-menu-title-content {
-      a {
-        color: #2e3080;
-        display: flex;
-        gap: 8px;
-        justify-content: center;
-        align-items: center;
-        font-size: 16px;
-        font-family: 'Raleway';
-        font-weight: 500;
-      }
+      background: #2e3080;
+      color: white;
     }
   }
 }

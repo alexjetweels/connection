@@ -1,54 +1,37 @@
-import { Avatar, Layout as AntdLayout, Menu, Popover } from 'antd';
-import React from 'react';
-import {
-  Navigate,
-  Outlet as RouterOutlet,
-  useLocation,
-} from 'react-router-dom';
+import React, { useState } from 'react';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { Layout as AntdLayout, Button } from 'antd';
 
-import { ReactComponent as IcNitroLogo } from '~/assets/svg/logo.svg';
-import { MenuNav } from './MenuNav';
+import { Outlet as RouterOutlet } from 'react-router-dom';
+import { SideNav } from './SideNav';
+import { CommonSearchInput } from '../CommonSearchInput/CommonSearchInput';
+import { HeaderAvatar } from './HeaderAvatar';
 
 const { Header, Content } = AntdLayout;
 
 export const Layout: React.FC = () => {
-  const prevLocation = useLocation();
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <AntdLayout>
-      <Header className="px-5 background-white border-bottom-gray">
-        <div className="flex items-center justify-between font-raleway">
-          <div className="flex justify-center">
-            <IcNitroLogo width={52} height={44} />
+      <SideNav collapsed={collapsed} />
+      <AntdLayout className="h-[calc(100vh)] bg-white">
+        <Header className="bg-white p-0 border-bottom-gray flex justify-between items-center">
+          <div className="flex items-center gap-1">
+            <Button
+              type="text"
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+            />
+            <CommonSearchInput />
           </div>
 
-          <MenuNav />
-
-          <div className="flex items-center justify-end gap-6">
-            {/* <Popover
-              content={content}
-              trigger={['click']}
-              placement="bottomLeft"
-            >
-              <a onClick={(e) => e.preventDefault()}>
-                <Avatar
-                  size={40}
-                  className="uppercase bg-[#FECBA1] text-[#CA6510]"
-                >
-                  {firstName.charAt(0)}
-                </Avatar>
-              </a>
-            </Popover> */}
-          </div>
-        </div>
-      </Header>
-      <div className="h-[calc(100vh-64px)] bg-nitro-gray">
+          <HeaderAvatar />
+        </Header>
         <Content>
-          <div>
-            <RouterOutlet />
-          </div>
+          <RouterOutlet />
         </Content>
-      </div>
+      </AntdLayout>
     </AntdLayout>
   );
 };

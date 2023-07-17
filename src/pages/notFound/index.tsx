@@ -13,7 +13,7 @@ export const NotFound: React.FC = () => {
       title="404"
       subTitle="Sorry, the page you visited does not exist."
       extra={
-        <Button type="primary" onClick={() => navigate(path.CLIENT_INFO)}>
+        <Button type="primary" onClick={() => navigate(path.PUNCH_CLOCK)}>
           Back Home
         </Button>
       }
