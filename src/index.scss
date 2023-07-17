@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif !important;
+  color: #212529;
+}
+
+@layer components {
+  .background-white {
+    background: white !important;
+  }
+
+  .border-side-bar {
+    border-right: 1px solid #d9d9d9 !important;
+  }
+
+  .sidebar-width {
+    width: 158px !important;
+  }
+
+  .full-height {
+    height: calc(100vh - 64px);
+  }
+
+  .border-right-header {
+    border-right: 1px solid #d9d9d9;
+  }
+
+  .border-left-header {
+    border-left: 1px solid #d9d9d9;
+  }
+
+  .border-teal-card {
+    border-left: 3px solid #00897b !important;
+  }
+
+  .border-blue-card {
+    border-left: 3px solid #0d6efd !important;
+  }
+
+  .box-shadow-card {
+    box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.125),
+      inset 0px 1px 0px rgba(0, 0, 0, 0.125),
+      inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+  }
+
+  .border-common {
+    border: 1px solid #d9d9d9;
+  }
+
+  .font-nutino {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .font-raleway {
+    font-family: 'Raleway', sans-serif !important;
+  }
+
+  .font-roboto {
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+  .font-roboto-condensed {
+    font-family: 'Roboto Condensed', sans-serif !important;
+  }
+
+  .box-shadow-common {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.075);
+  }
+
+  .border-bottom-gray {
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .border-bottom-grayLight {
+    border-bottom: 1px solid #525497;
+  }
+
+  .background-green {
+    background-color: #d1e7dd !important;
+  }
+
+  .hide-webkit::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-webkit {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .border-export {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+
+  .border-bottom-right {
+    border-bottom: 0.5px solid #d9d9d9;
+    border-right: 0.5px solid #d9d9d9;
+  }
+  .border-bottom-left {
+    border-bottom: 0.5px solid #d9d9d9;
+    border-left: 0.5px solid #d9d9d9;
+  }
+
+  .border-bottom-left-right {
+    border-bottom: 0.5px solid #d9d9d9;
+    border-right: 0.5px solid #d9d9d9;
+    border-left: 0.5px solid #d9d9d9;
+  }
+  .border-top-left-right {
+    border-top: 0.5px solid #d9d9d9;
+    border-right: 0.5px solid #d9d9d9;
+    border-left: 0.5px solid #d9d9d9;
+  }
+
+  .border-top-right {
+    border-top: 0.5px solid #d9d9d9;
+    border-right: 0.5px solid #d9d9d9;
+  }
+  .border-top-left {
+    border-top: 0.5px solid #d9d9d9;
+    border-left: 0.5px solid #d9d9d9;
+  }
+}
+
+.overlay-custom-class-name {
+  .react-confirm-alert-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+}

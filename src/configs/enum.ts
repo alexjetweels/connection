@@ -1,0 +1,63 @@
+export enum MenuKey {
+  BILLING = 'BILLING',
+  OPERATOR = 'OPERATOR',
+  FINANCE = 'FINANCE',
+
+  SCHEDULE = 'schedule',
+  TIME_SHEET = 'time-sheet',
+  CLIENT_INFO = 'client-info',
+  MASTER_SCHEDULE = 'edit-masterschedule',
+}
+
+export enum TimeSheetKey {
+  TIMESHEET = 'TIMESHEET',
+  BILLING_HOUR_SUMMARY = 'BILLING_HOUR_SUMMARY',
+  BILLING_BACKUP = 'BILLING_BACKUP',
+}
+
+export enum Shift {
+  AM = 'AM',
+  PM = 'PM',
+  OVERNIGHT = 'OVERNIGHT',
+}
+
+export enum Loc {
+  LOC1 = 'LOC1',
+  LOC2 = 'LOC2',
+  LOC3 = 'LOC3',
+}
+
+export enum Post {
+  POST1 = 'POST1',
+  POST2 = 'POST2',
+}
+
+export enum ScheduleUPloadType {
+  MASTER = 'MASTER',
+  WEEK = 'WEEK',
+}
+
+export type DAY = 'MON' | 'TUE' | 'WED' | 'THUR' | 'FRI' | 'SAT' | 'SUN';
+
+export enum DRAG_DROP_TYPE {
+  MASTER = 'MASTER',
+  WEEK_SCHEDULE = 'WEEK_SCHEDULE',
+}
+
+export enum SCHEDULE_DROPDOWN_EVENT {
+  COPY = 'COPY',
+  PASTE = 'PASTE',
+  SEARCH_AND_REPLACE = 'SEARCH_AND_REPLACE',
+  IMPORT_WEEK_FROM_MASTER = 'IMPORT_WEEK_FROM_MASTER',
+  COPY_WEEK_TO_MASTER = 'COPY_WEEK_TO_MASTER',
+  DELETE_SHIFT = 'DELETE_SHIFT',
+  DELETE_ALL_SHIFT = 'DELETE_ALL_SHIFT',
+}
+
+export enum TIMESHEET_DROPDOWN_EVENT {
+  ATTENDANCE_HIS = 'ATTENDANCE_HIS',
+  DETAIL_ATTENDANCE = 'DETAIL_ATTENDANCE',
+  ACTION_NOTICES = 'ACTION_NOTICES',
+  TS_LOG = 'TS_LOG',
+  SPLIT_TIMESHEET = 'SPLIT_TIMESHEET',
+}

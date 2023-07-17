@@ -1,0 +1,75 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // ext library & side effect imports
+          ["^~?\\w", "^\\u0000", "^@?\\w"],
+
+          // Lib and hooks
+          ["^~/lib", "^~/hooks"],
+          // static data
+          ["^~/data"],
+          // components
+          ["^~/components", "^~/container"],
+
+          // Other imports
+          ["^~/"],
+          // relative paths up until 3 level
+          [
+            "^\\./?$",
+            "^\\.(?!/?$)",
+            "^\\.\\./?$",
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./\\.\\./?$",
+            "^\\.\\./\\.\\.(?!/?$)",
+            "^\\.\\./\\.\\./\\.\\./?$",
+            "^\\.\\./\\.\\./\\.\\.(?!/?$)"
+          ],
+          ["^~/types"],
+          // other that didnt fit in
+
+          // {s}css files
+          ["^.+\\.s?css$"],
+          ["^"]
+        ]
+      }
+    ]
+  }
+}

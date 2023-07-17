@@ -1,0 +1,19 @@
+.datePicker {
+  :global {
+    .ant-picker-panel-container {
+      .ant-picker-panel-layout {
+        .ant-picker-content {
+          thead > tr > th:first-child {
+            display: none !important;
+          }
+
+          .ant-picker-week-panel-row {
+            .ant-picker-cell-week {
+              display: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
