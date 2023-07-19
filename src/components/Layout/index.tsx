@@ -28,7 +28,7 @@ export const Layout: React.FC = () => {
 
           <HeaderAvatar />
         </Header>
-        <Content>
+        <Content className="p-4 bg-[#f6f6f6]">
           <RouterOutlet />
         </Content>
       </AntdLayout>

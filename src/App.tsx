@@ -38,7 +38,7 @@ export const App: React.FC = () => {
           path={path.PUNCH_CLOCK}
           element={
             <RouteSuspense>
-              <Home />
+              <PunchClock />
             </RouteSuspense>
           }
         />
@@ -47,7 +47,7 @@ export const App: React.FC = () => {
           path={path.JOB_SCHEDULE}
           element={
             <RouteSuspense>
-              <Home />
+              <JobSchedule />
             </RouteSuspense>
           }
         />

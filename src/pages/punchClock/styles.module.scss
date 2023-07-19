@@ -1,0 +1,27 @@
+.tab {
+  :global {
+    .ant-tabs-nav {
+      margin-bottom: 0px !important;
+    }
+
+    .ant-tabs-nav-list {
+      width: 100% !important;
+    }
+    .ant-tabs-tab {
+      width: 50% !important;
+      border: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ant-tabs-ink-bar {
+      display: none !important;
+    }
+
+    .ant-tabs-tab-active {
+      .ant-tabs-tab-btn {
+        color: rgb(45, 81, 211) !important;
+      }
+    }
+  }
+}
