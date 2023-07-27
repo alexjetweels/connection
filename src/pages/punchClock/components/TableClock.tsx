@@ -214,6 +214,7 @@ export const TableClock = () => {
         }}
         columns={columns}
         dataSource={data}
+        scroll={{ x: 1300 }}
       />
     </div>
   );
