@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Layout as AntdLayout, Button } from 'antd';
 
-import { Outlet as RouterOutlet } from 'react-router-dom';
+import {
+  Navigate,
+  Outlet as RouterOutlet,
+  useNavigate,
+} from 'react-router-dom';
 import { SideNav } from './SideNav';
 import { CommonSearchInput } from '../CommonSearchInput/CommonSearchInput';
 import { HeaderAvatar } from './HeaderAvatar';
+import { useAuth } from '~/firebase/auth';
+import path from '~/configs/path';
 
 const { Header, Content } = AntdLayout;
 
 export const Layout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { authUser, isLoading }: any = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoading && !authUser) {
+      navigate(path.LOG_IN);
+    }
+  }, [authUser, isLoading]);
 
   return (
     <AntdLayout>

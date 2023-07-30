@@ -14,6 +14,7 @@ import history from '~/utils/history';
 import { App } from './App';
 
 import './index.scss';
+import { AuthUserProvider } from './firebase/auth';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -52,9 +53,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         },
       }}
     >
-      <Router history={history as any}>
-        <App />
-      </Router>
+      <AuthUserProvider>
+        <Router history={history as any}>
+          <App />
+        </Router>
+      </AuthUserProvider>
     </ConfigProvider>
   </QueryClientProvider>
 );
