@@ -9,6 +9,8 @@ import path from './configs/path';
 
 const { Home } = lazyImport(() => import('./pages/home'), 'Home');
 const { NotFound } = lazyImport(() => import('./pages/notFound'), 'NotFound');
+const { Login } = lazyImport(() => import('./pages/login'), 'Login');
+
 const { JobSchedule } = lazyImport(
   () => import('./pages/jobSchedule'),
   'JobSchedule'
@@ -52,6 +54,15 @@ export const App: React.FC = () => {
           }
         />
       </Route>
+
+      <Route
+        path={path.LOG_IN}
+        element={
+          <RouteSuspense>
+            <Login />
+          </RouteSuspense>
+        }
+      />
 
       <Route
         path="*"
