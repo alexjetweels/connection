@@ -81,8 +81,11 @@ interface IProps {
 }
 export const ModalEditMap = ({ open, onCancel }: IProps) => {
   const [form] = Form.useForm();
+  const [formAdd] = Form.useForm();
+
   const [mapData, setMapData] = useState(MAP_DATA);
   const [editSite, setEditSite] = useState('');
+  const [isAddSite, setIsAddSite] = useState(false);
 
   const {
     ready,
@@ -166,6 +169,12 @@ export const ModalEditMap = ({ open, onCancel }: IProps) => {
     setEditSite('');
   };
 
+  const handleSaveAdd = async () => {
+    const values = form.validateFields();
+
+    console.log(values);
+  };
+
   return (
     <Modal
       width={'80%'}
@@ -187,6 +196,7 @@ export const ModalEditMap = ({ open, onCancel }: IProps) => {
             <Button
               className="border border-solid border-blue-300 rounded-2xl text-blue-500 "
               icon={<PlusOutlined />}
+              onClick={() => setIsAddSite(true)}
             >
               Add sites
             </Button>
@@ -264,6 +274,52 @@ export const ModalEditMap = ({ open, onCancel }: IProps) => {
               )}
             </div>
           ))}
+
+          {isAddSite && (
+            <div className="rounded border border-solid bg-slate-100 border-gray-300 p-2 mb-2">
+              <Form form={formAdd} layout="vertical">
+                <Form.Item name="name" label="Site name">
+                  <Input />
+                </Form.Item>
+
+                <Form.Item name="address" label="Site address">
+                  <div ref={ref}>
+                    <Input
+                      value={value}
+                      onChange={handleInput}
+                      type="text"
+                      suffix={<EnvironmentOutlined />}
+                      className="rounded border border-solid border-gray-300 outline-none"
+                    />
+
+                    {status === 'OK' && <ul>{renderSuggestions()}</ul>}
+                  </div>
+                </Form.Item>
+
+                <Form.Item name="fenceSize" label="Fence Site">
+                  <Slider defaultValue={30} min={10} max={3000} />
+                </Form.Item>
+
+                <div className="flex justify-end gap-2 mt-4">
+                  <Button
+                    className="border border-solid border-blue-300 rounded-2xl text-blue-500 "
+                    onClick={handleSaveAdd}
+                  >
+                    Save
+                  </Button>
+                  <Button
+                    className="border border-solid border-black/25 rounded-2xl text-black"
+                    onClick={() => {
+                      formAdd.resetFields();
+                      setIsAddSite(false);
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                </div>
+              </Form>
+            </div>
+          )}
         </div>
         <div>
           <MapEditing data={mapData} />
